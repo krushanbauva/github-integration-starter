@@ -2,10 +2,11 @@
   kind: postgres
   configuration:
     connection_info:
-      database_url: postgres://postgres:postgrespassword@postgres:5432/postgres
-      # database_url:
-      #   from_env: PG_DATABASE_URL
-      #   # from_env: HEROKU_DATABASE_URL
+      # for local development
+      # database_url: postgres://postgres:postgrespassword@postgres:5432/postgres
+      # for cloud project
+      database_url:
+        from_env: PG_DATABASE_URL
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include default/tables/tables.yaml"
